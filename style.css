@@ -63,3 +63,14 @@ img {
     font-size: 15px;
   }
 }
+
+.footer {
+  background-color: #7fffd4;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: brown;
+}
