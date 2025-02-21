@@ -1,22 +1,126 @@
+:root {
+  --font-family: "Montserrat", serif;
+  --color-navbar: #a3d1c6;
+  --color-primary: #b3d8a8;
+  --color-secondary: #fbffe4;
+  --color-tertiary: #a3d1c6;
+  --font-color-content: #664a26;
+  --font-color-title: rgb(95, 54, 54);
+  --font-color-footer: rgb(100, 25, 25);
+  --font-color-navbar: rgb(64, 10, 10);
+}
 * {
   /* background: rgb(2, 0, 36); */
-  background: #7fffd4;
-
-  font-family: "Montserrat", serif;
-  color: rgb(102, 74, 38);
+  background: var(--color-primary);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+  /* color: var(--font-color); */
 }
 
+/* nav css */
+nav {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* box-sizing: border-box; */
+  padding: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+nav,
+.title,
+.menu,
+li,
+a,
+ul,
+p,
+span,
+.hamburger1 {
+  background-color: var(--color-navbar);
+}
+
+/* TULISAN SPAN PADA BAIGAN TITLE (NAVBAR) */
+.key1,
+.key2 {
+  color: rgb(79, 64, 64);
+}
+
+/* tulisan title nav css  */
+nav .title p {
+  color: var(--font-color-navbar);
+  font-family: var(--font-family);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* end of title css */
+
+/* navigasi css code */
+nav .menu {
+  width: 40%;
+  /* height: 4.09rem; */
+}
+nav .menu ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav .menu ul li {
+  list-style: none;
+}
+
+/* TULISAN PADA NAVBAR */
+nav .menu ul li a {
+  color: var(--font-color-navbar);
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* end of css navigasi code */
+/* end of css nav */
+
+nav .hamburger1 {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  height: 40px;
+  justify-content: space-around;
+  display: none;
+}
+
+nav .hamburger .hamburger1,
+.satu,
+.dua,
+.tiga {
+  width: 40px;
+  height: 5px;
+  background-color: rgb(255, 255, 255);
+  display: block;
+  border-radius: 5px;
+}
+
+/* CONTENT */
+/* JUDUL */
 .judul {
   font-size: 50px;
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
-  font-family: "Montserrat", serif;
-  color: brown;
+  font-family: var(--font-family);
+  color: var(--font-color-title);
 }
-
+/* FOTO */
 .photocard {
-  /* background-color: ; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -25,19 +129,15 @@
 }
 
 img {
-  background: linear-gradient(to right, aquamarine, lightblue);
-  width: 300px;
+  /* background: linear-gradient(to right, aquamarine, lightblue); */
+  /* background-color: var(--color-secondary); */
+  width: 500px;
   /* background-color: black; */
-  height: 300px;
+  height: 500px;
 }
 
 .details1 {
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(127, 255, 212, 1) 100%
-  );
+  background-color: var(--color-secondary);
   align-items: center;
 
   display: flex;
@@ -45,33 +145,87 @@ img {
   padding: 20px;
 }
 
+/* TULISAN DESKRIPSI DAN JUDUL FOTO */
 .details1 p {
   font-weight: 500;
-  background-color: rgba(238, 174, 202, 0.209);
+  padding: 5px;
+  background-color: var(--color-secondary);
 }
 
 .details1 h2 {
-  background-color: rgba(238, 174, 202, 0.209);
+  padding: 5px;
+  background-color: var(--color-secondary);
 }
+
+/* END KONTEN */
+
+/* MEDIA HP */
 
 @media (max-width: 768px) {
   .judul {
     font-size: 30px;
+    /* width: 100%; */
+    padding: 4rem;
+    text-align: center;
+    padding-top: 25rem;
+    /* width: 500px; */
+  }
+
+  .judulWeb {
+    width: 100%;
+    height: 50rem;
+  }
+
+  #gallery {
+    margin-top: 4rem;
+    padding-top: 4rem;
+  }
+
+  img {
+    width: 50%;
+    height: 50%;
   }
 
   p,
   h2 {
     font-size: 15px;
   }
+  nav {
+    position: fixed;
+  }
+
+  nav .hamburger1 {
+    display: flex;
+    padding-right: 25px;
+    padding-bottom: 2px;
+  }
+
+  nav .menu {
+    position: absolute;
+    height: 50vh;
+    right: 0px;
+    top: -500px;
+    background-color: var(--color-navbar);
+  }
+  nav .menu ul {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    align-items: center;
+  }
+  nav .menu ul li {
+    list-style: none;
+  }
 }
 
+/* FOOTER  */
 .footer {
-  background-color: #7fffd4;
+  background-color: var(--color-navbar);
   text-align: center;
   padding: 10px;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  color: brown;
+  color: var(--font-color-footer);
 }
