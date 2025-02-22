@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   /* color: var(--font-color); */
 }
 
@@ -162,6 +162,9 @@ img {
 /* MEDIA HP */
 
 @media (max-width: 768px) {
+  * {
+    overflow-x: visible;
+  }
   .judul {
     font-size: 30px;
     /* width: 100%; */
