@@ -1,14 +1,20 @@
-const hamburger = document.querySelector(".hamburger1");
-const menu = document.querySelector(".menu");
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger1");
+  const menu = document.querySelector(".menu");
 
-let counter = 0;
+  document.querySelector(".hamburger1").onclick = () => {
+    menu.classList.toggle("active");
+  };
 
-hamburger.addEventListener("click", function () {
-  if (counter % 2 == 0) {
-    menu.style.top = "50px";
-    counter++;
-  } else {
-    menu.style.top = "-500px";
-    counter++;
-  }
+  document.addEventListener("click", function (e) {
+    if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove("active");
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    if (menu.classList.contains("active")) {
+      menu.classList.remove("active");
+    }
+  });
 });
